@@ -1,0 +1,33 @@
+/* stylelint-disable */
+
+$color--cool-yellow: #f2bc3b;
+$color--cool-grey: #8c8f94;
+$color--dark-grey: #26272d;
+
+.yellow {color: $color--cool-yellow;}
+.grey {color: $color--cool-grey;}
+
+@mixin font-body() {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: $color--cool-grey;
+}
+
+.icon-right {margin-left: 14px;}
+.icon-left {margin-right: 14px;}
+
+
+// FOUNDATION 990,770,410
+
+$grid-columns: 12;
+$breakpoints: (
+	small: 0,
+	medium: 410px,
+	large: 770px,
+	xlarge: 990px,
+	xxlarge: 1200px,
+);
+$breakpoint-classes: (small medium large xlarge xxlarge);
+
+/* stylelint-enable */

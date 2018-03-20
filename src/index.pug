@@ -1,0 +1,180 @@
+extends pug/base
+
+prepend vars
+	- title = 'Test task'
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+
+	mixin button(color,icon,iconSide,text)
+		a(href=`javascript:void(0)` class=`button ${color}`)
+			.wave
+			div
+				if iconSide === 'icon-right'
+					span= text
+				span(class=`icon ${icon} ${iconSide}`)
+				if iconSide !== 'icon-right'
+					span= text
+
+	mixin stars(on)
+		.stars__wrap
+			- for (var i=0; i<on; i++)
+				span.icon.icon-star.yellow
+			- for (var i=on; i<5; i++)
+				span.icon.icon-star.grey
+
+	//
+		.grid-container(style="position:fixed; background-color:rgba(0,255,0,.5)")
+			.grid-x.grid-padding-x
+				.cell.show-for-xxlarge-only xxlarge
+				.cell.show-for-xlarge-only xlarge
+				.cell.show-for-large-only large
+				.cell.show-for-medium-only medium
+				.cell.show-for-small-only small
+
+	.grid-container
+		nav.grid-x.grid-padding-x.nav
+			.nav__hamburger--med #[a #[span.icon.icon-hamburger1]]
+			.cell.large-5.hide-for-medium-only.hide-for-small-only
+				ul.nav__ul--left
+					li #[a #[span.icon.icon-hamburger1]]
+					li #[a.underline Tour]
+					li #[a.underline Features]
+					li #[a.underline Pricing]
+			.cell.large-2.text-center
+				a(href="javascript:void()")
+					img.nav__logo(src="images/logo.png" alt="NEWPROVIDENCE")
+			.cell.large-5.hide-for-medium-only.hide-for-small-only
+				ul.nav__ul--right
+					li #[+button('blue','icon-apple','icon-left','Get App')]
+					li #[a.underline Contacts]
+					li #[a.underline Help]
+	.block1
+		.grid-container
+			.grid-x.grid-padding-x
+				.cell.large-8.large-offset-2.text-center
+					h1 What happens tomorrow?
+					p The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.
+					+button('white','icon-play','icon-left','Watch Video')
+					p #[img(src="images/header_iphone.png")]
+
+	.block2
+		.grid-container
+			.grid-x.grid-padding-x
+				.cell.large-6.medium-12
+					.block2__wrap
+						p #[span.icon.icon-lock]
+						h3 Real-time all the time
+						p Thus much I thought proper to tell you in relation to yourself, and to the trust I reposed in you.
+						p Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.
+				.cell.large-6.medium-12
+					.block2__wrap
+						p #[span.icon.icon-clock]
+						h3 Adopt without any obstacles
+						p This sounded a very good reason, and Alice was quite pleased to know it. 'I never thought of that before!' she said.
+						p This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.
+				.cell.small-12.line
+
+	.block3
+		.grid-container
+			.grid-x.grid-padding-x
+				.cell.large-7
+					img.block3__img(src="images/iphone-feature.png")
+				.cell.large-5
+					.block3__wrap
+						h2 Your day is protected
+						.block3__txt
+							p There have not been any since we have lived here, said my mother.
+							p We thought - Mr. Copperfield thought - it was quite a large rookery; but the nests were very old ones, and the birds have deserted them a long while.
+						+button('blue','icon-arrow','icon-right','Try to hack us')
+						+button('white','','','Learn more')
+
+
+	.block4.text-center
+		h2 Beautiful Interface
+		.block4__line
+		p LANDING SCREEN
+		.block4__screens
+
+	.block5.text-center
+		p NEWPROVIDENCE
+		h2 Get it to your smartphone
+		form
+			input(placeholder="denis@getcraftwork.com")
+			+button('green','icon-arrow','icon-right','Send Invite')
+
+
+	.grid-container.block6
+		.grid-x.grid-padding-x
+			.cell.large-12
+				div#slider1_container(style="height:630px;")
+					div(data-u="slides" class="slides" style="height:630px;")
+
+						div
+							div.slide
+								h2 New Providence is the great UI kit
+								p.block6__txt “Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.”
+								+stars(3)
+								p.block6__author Cameron Dowman
+
+
+						div
+							div.slide
+								h2 New Providence is the great UI kit
+								p.block6__txt “Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.”
+								+stars(1)
+								p.block6__author Cameron Dowman
+
+						div
+							div.slide
+								h2 New Providence is the great UI kit
+								p.block6__txt “Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.”
+								+stars(5)
+								p.block6__author Cameron Dowman
+
+					// Bullets
+					div(data-u="navigator" class="jssorb052")
+						div(data-u="prototype" class="i" style="width:130px;height:130px;")
+							img(data-u="image" src="images/user1.jpg")
+
+					// Arrows
+					div(data-u="arrowleft" class="jssora053" style="top:0px;left:25px;")
+						span.icon.icon-arrow_left
+					div(data-u="arrowright" class="jssora053" style="top:0px;right:25px;")
+						span.icon.icon-arrow_right
+			.cell.small-12.line.hide-for-small-only
+
+
+
+
+		footer.grid-x.grid-padding-x.footer
+			.cell.large-3.medium-12
+				img.footer__logo(src="images/logo.png" alt="NEWPROVIDENCE")
+				p It was some time before he obtained any answer, and the reply, when made, was unpropitious.
+				.footer__socials
+					a(href="javascript:void(0)") #[span.icon.icon-twitter]
+					a(href="javascript:void(0)") #[span.icon.icon-facebook]
+					a(href="javascript:void(0)") #[span.icon.icon-linkedin]
+			.cell.large-offset-3.large-2.medium-4.small-12
+				h5 LEARN MORE
+				ul
+					li #[a.underline(href="javascript:void()") How it works?]
+					li #[a.underline(href="javascript:void()") Meeting tools]
+					li #[a.underline(href="javascript:void()") Live striming]
+					li #[a.underline(href="javascript:void()") Contact method]
+			.cell.large-2.medium-4.small-12
+				h5 ABOUT US
+				ul
+					li #[a.underline(href="javascript:void()") About us]
+					li #[a.underline(href="javascript:void()") Features]
+					li #[a.underline(href="javascript:void()") Privacy police]
+					li #[a.underline(href="javascript:void()") Terms & Conditions]
+			.cell.large-2.medium-4.small-12
+				h5 SUPPORT
+				ul
+					li #[a.underline(href="javascript:void()") F.A.Q.]
+					li #[a.underline(href="javascript:void()") Contact us]
+					li #[a.underline(href="javascript:void()") Live chat]
+					li #[a.underline(href="javascript:void()") Phone call]
